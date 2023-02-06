@@ -22,7 +22,7 @@ def up_sampling_block(inputs, filters, kernel_size=(3,3), padding='same', stride
     x = layers.Activation('relu')(x)
     return x
 
-def build_unet(input_shape, num_classes=1):
+def build_unet(input_shape, num_classes):
     inputs = keras.layers.Input(shape=input_shape)
     filters = 64
     block1 = down_sampling_block(inputs, filters)
